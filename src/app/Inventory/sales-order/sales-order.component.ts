@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-sales-order',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SalesOrderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit(): void {
+  }
+
+  Onclick(){
+    this.toastr.success("Hello world!", "Toastr fun!", {
+      titleClass: "center",
+      messageClass: "center"
+    });
   }
 
 }

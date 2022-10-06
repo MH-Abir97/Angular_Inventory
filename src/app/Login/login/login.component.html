@@ -2,6 +2,9 @@
 <br/>
 <br/>
 <br/>
+<form [formGroup]="loginForm">
+
+
 <div fxLayout="row" fxLayoutWrap="wrap" style="width:30%;margin-left: 35%;margin-right: 35%;">
         <!-- Card column -->
         <div fxFlex.gt-sm="40%" fxFlex="40">
@@ -13,27 +16,29 @@
                                 <img src="assets/images/avatarUser.png" style="background-color: #1e88e5;"  width="100" alt="user" class="img-circle">
                             </div>
                          
-                          
-                           <mat-form-field>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-                            <mat-label ><mat-icon style="font-weight:22px;">perm_identity</mat-icon><i></i></mat-label>
-                             <input matInput placeholder="User name" formControlName="editablefirstCtrl" >
-                           </mat-form-field>
-                      
-                           <mat-form-field>
-                            <mat-label ><mat-icon style="font-weight:22px;">lock</mat-icon><i></i></mat-label>
-                            <input matInput placeholder="Password name" formControlName="editablefirstCtrl" >
-                          </mat-form-field>
-
-                          
-                        <!-- <button mat-raised-button  color="primary" style="width: 100%;"  >
-                          <mat-icon>save</mat-icon>  Login </button> -->
-                         
-                          <mat-chip-list style="text-align: center;">
-                         
-                            <mat-chip color="primary" style="width:100%; text-align: center;" (click)="LoginSave()" selected="true"> <span style="text-align:center;margin-left: 45%;"> Login</span></mat-chip>
+ 
+                            <mat-form-field>
+                              <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                              <mat-label ><mat-icon style="font-weight:22px;">perm_identity</mat-icon><i></i></mat-label>
+                               <input matInput placeholder="User name" formControlName="UserName" >
+                             </mat-form-field>
+                        
+                             <mat-form-field>
+                              <mat-label ><mat-icon style="font-weight:22px;">lock</mat-icon><i></i></mat-label>
+                              <input matInput placeholder="Password name" formControlName="Password" >
+                            </mat-form-field>
+  
+                            
+                          <!-- <button mat-raised-button  color="primary" style="width: 100%;"  >
+                            <mat-icon>save</mat-icon>  Login </button> -->
                            
-                          </mat-chip-list>
+                            <mat-chip-list style="text-align: center;">
+                           
+                              <mat-chip color="primary" style="width:100%; text-align: center;" (click)="LoginSave()" selected="true"> <span style="text-align:center;margin-left: 45%;"> Login</span></mat-chip>
+                             
+                            </mat-chip-list>
+                     
+                           
                         </mat-card-content>
                        
                     </mat-card>
@@ -43,6 +48,8 @@
 
        
 </div>
+
+</form>
 
 <br/>
 <br/>

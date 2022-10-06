@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+/* .center {
+    text-align: center;
+  }
+  
+  .toast-success {
+    padding-left: 80px;
+    text-align: center;
+    background-position: 35% !important;
+    width: 20%;
+    background-color: green;
+  } */
+  /* .toast-success{background-color:#51A351!important;}
+  .toast-error{background-color:#BD362F!important;}
+  .toast-info{background-color:#2F96B4!important;}
+  .toast-warning{background-color:#F89406!important;} */
+  @import '~ngx-toastr/toastr.css'
