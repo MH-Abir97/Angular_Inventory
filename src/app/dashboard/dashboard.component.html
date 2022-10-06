@@ -1,0 +1,79 @@
+<!-- ============================================================== -->
+<!-- Simple four boxes Row -->
+<!-- ============================================================== -->
+
+    
+    <mat-grid-list cols="3" rowHeight="2:1">
+      <mat-grid-tile>
+        <mat-card class="example-card" style="width: 100%;height: 150px;">
+          <mat-card-content>
+            <p>
+              <span >Sales 100K <span style="color:red;" matBadge="4" ></span></span>
+            </p>
+            
+            <p>
+                <span matBadge="1"  matBadgeColor="accent">Sales Pending 200k</span>
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="example-card" style="width: 100%;height: 150px;">
+          <mat-card-content>
+            <p>
+              <span >Sales 100K <span style="color:red;" matBadge="4" ></span></span>
+            </p>
+            
+            <p>
+                <span matBadge="1"  >Sales Pending 200k</span>
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="example-card" style="width: 100%;height: 150px;">
+          <mat-card-content>
+            <p>
+              <span >Sales 100K <span style="color:red;" matBadge="4" ></span></span>
+            </p>
+            
+            <p>
+                <span matBadge="1" mat-raised-button color="warn"  >Sales Pending 200k</span>
+            </p>
+          </mat-card-content>
+        
+        </mat-card>
+       </mat-grid-tile>
+
+    </mat-grid-list>  
+
+
+<br>
+
+<div fxLayout="row wrap">
+  <!-- column -->
+  <div fxFlex.gt-lg="65" fxFlex.gt-md="65" fxFlex.gt-xs="100" fxFlex="100">
+    <app-sales-overview></app-sales-overview>
+  </div>
+  <!-- column -->
+  <!-- column -->
+  <div fxFlex.gt-lg="35" fxFlex.gt-md="35" fxFlex.gt-xs="100" fxFlex="100">
+    <app-our-visiter></app-our-visiter>
+  </div>
+  <!-- column -->
+</div>
+
+<!-- ============================================================== -->
+<!-- Image Card row-->
+<!-- ============================================================== -->
+<!-- <div fxLayout="row wrap">
+
+  <div fxFlex.gt-lg="25" fxFlex.gt-md="40" fxFlex.gt-xs="100" fxFlex="100">
+    <app-profile></app-profile>
+    <app-contacts></app-contacts>
+  </div>
+
+  <div fxFlex.gt-lg="75" fxFlex.gt-md="60" fxFlex.gt-xs="100" fxFlex="100">
+    <app-activity-timeline></app-activity-timeline>
+  </div>
+</div> -->
