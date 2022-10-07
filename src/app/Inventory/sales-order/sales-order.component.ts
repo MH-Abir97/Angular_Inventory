@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
+
 @Component({
   selector: 'app-sales-order',
   templateUrl: './sales-order.component.html',
   styleUrls: ['./sales-order.component.css']
 })
+
 export class SalesOrderComponent implements OnInit {
 
   constructor(private toastr: ToastrService) { }

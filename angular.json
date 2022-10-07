@@ -14,7 +14,7 @@
             "allowedCommonJsDependencies": [
               "rxjs-compat",
               "rxjs",
-              "hammerjs"           
+              "hammerjs"
             ],
             "outputPath": "dist",
             "index": "src/index.html",
@@ -28,9 +28,8 @@
             "styles": [
               "src/styles.css",
               "src/assets/styles/style.scss",
-              "node_modules/ngx-toastr/toastr.css",
-            
               "node_modules/ngx-toastr/toastr.css"
+
             ],
             "scripts": [],
             "vendorChunk": true,
@@ -90,7 +89,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "scripts": [
-              
+
             ],
             "styles": [
               "src/styles.css",

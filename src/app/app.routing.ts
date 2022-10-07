@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './AuthGurd/auth.gurd';
-
+import { CommonTableComponent } from './Inventory/common-table/common-table.component';
 import { FullComponent } from './layouts/full/full.component';
 import { LoginComponent } from './Login/login/login.component';
 
@@ -9,20 +9,19 @@ export const AppRoutes: Routes = [
     path: '',
     component:LoginComponent
   },
-  
   {
 
-   
+
     path: '',
     component: FullComponent,
-   
+
     children: [
       {
         path: '',
         redirectTo: '/dashboard',
         pathMatch: 'full'
       },
-     
+
       {
         path: '',
         loadChildren:
@@ -30,7 +29,7 @@ export const AppRoutes: Routes = [
       },
       {
         path: 'dashboard',
-        
+
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       },
       {

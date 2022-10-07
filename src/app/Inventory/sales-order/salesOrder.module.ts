@@ -10,14 +10,16 @@ import { SalesOverviewComponent } from "src/app/dashboard/dashboard-components/s
 import { DemoMaterialModule } from "src/app/demo-material-module";
 import { SalesOrderComponent } from "./sales-order.component";
 import { SalesOrderRoutes } from "./salesOrder.routing";
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
+import { CommonTableComponent } from "../common-table/common-table.component";
 @NgModule({
     imports: [
       CommonModule,
       DemoMaterialModule,
       RouterModule.forChild(SalesOrderRoutes)
     ],
-    declarations: [SalesOrderComponent]
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+    declarations: [SalesOrderComponent,CommonTableComponent],
+
   })
   export class SalesOrderModule {}
-  

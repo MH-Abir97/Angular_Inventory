@@ -19,6 +19,8 @@ import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component'
 
 import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr';
+import { CommonTableComponent } from './Inventory/common-table/common-table.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,8 @@ import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr';
     AppHeaderComponent,
     SpinnerComponent,
     AppSidebarComponent,
-   
+
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     SharedModule,
     RouterModule.forRoot(AppRoutes),
- 
+
     ToastrModule.forRoot({
       // timeOut: 10000,
       positionClass: 'toast-bottom-right',
@@ -52,6 +55,7 @@ import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr';
       useClass: PathLocationStrategy
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule {}
