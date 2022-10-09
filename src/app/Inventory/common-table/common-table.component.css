@@ -1,0 +1,16 @@
+table {
+    width: 100%;
+
+  }
+
+  table th {
+    background-color:#add8e6;
+    font-size: 14px;
+    text-align: center;
+    /* width: 10%; */
+  }
+
+  table td{
+    text-align: center;
+    /* width: 10%; */
+  }
