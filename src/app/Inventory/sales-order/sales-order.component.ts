@@ -20,6 +20,12 @@ export class SalesOrderComponent implements OnInit {
       titleClass: "center",
       messageClass: "center"
     });
+
+
+
+     // window.open('http://localhost:4200/salesOrder');
+
+      
   }
 
 }

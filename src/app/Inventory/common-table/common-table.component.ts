@@ -33,11 +33,13 @@ export class CommonTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
-  print() {
-    window.print();
-    }
+  printbtn() {
+    window.open("http://localhost:4200/requestionReport", "popup", "width=850,height=550,left=280,top=80");
+  }
+
+
 
 }

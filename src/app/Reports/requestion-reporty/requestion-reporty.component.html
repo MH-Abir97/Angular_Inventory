@@ -1,0 +1,90 @@
+
+
+
+<div style="background-color:white;">
+  <div class="row wrap hidden-print">
+    <mat-grid-list cols="5" rowHeight="40px">
+      <mat-grid-tile>
+
+      </mat-grid-tile>
+      <mat-grid-tile style="text-align:right">
+
+      </mat-grid-tile>
+      <mat-grid-tile style="text-align:right">
+
+      </mat-grid-tile>
+      <mat-grid-tile style="text-align:right">
+
+      </mat-grid-tile>
+      <mat-grid-tile style="text-align:right">
+        <button (click)="PrintView()"  color="primary"  mat-raised-button  style="width:15px;margin-left: 20px;">
+          <mat-icon>print</mat-icon>
+         </button>
+      </mat-grid-tile>
+    </mat-grid-list>
+    <hr>
+  </div>
+
+  <div style="margin-left: 20px;margin-right: 20px;">
+    <table id="heading" style="text-align: center;margin-left:auto;margin-right:auto;">
+
+      <tr>
+          <td>
+
+          </td>
+          <td>
+              <p style="font-size: 30px;line-height: 1; margin : 0; padding : 0 ; font-weight: bold;"><strong> <b>Inventory</b></strong></p>
+
+              <p style="font-size: 25px; text-align: center; margin: 0px; padding: 0px;"> <b> <u>Requestion Report</u></b></p>
+          </td>
+      </tr>
+  </table>
+
+    <table style="width:100%">
+      <tr>
+          <td style="width:80%">
+
+              <p style="line-height:1px">PR. Number : 0001</p>
+              <p style="line-height:1px">PR. Date : 0001</p>
+
+          </td>
+          <td style="width:20%;">
+              <p style="line-height:1px;">Prepared By :  <span style="text-align:right"> 0001</span></p>
+              <p style="line-height:1px">Date : <span style="text-align:right"> 001</span></p>
+
+          </td>
+      </tr>
+  </table>
+    <table class="ProductTable table table-bordered " style="width: 100%;  margin-left: auto; margin-right: auto;">
+      <tbody>
+
+          <tr>
+              <th class="text-center">S/N</th>
+              <th class="text-center">Item Name</th>
+              <th class="text-center">Requested Qty</th>
+              <th class="text-center">Remarks</th>
+
+          </tr>
+          <tr class="HoverTable" ng-repeat="pr in   PurchaseRequestionDetailList track by $index">
+              <td class="text-center">
+                011
+              </td>
+              <td class="text-center">
+                00001
+              </td>
+              <td class="text-center">
+                 0001
+              </td>
+              <td class="text-center">
+                0001
+              </td>
+
+
+          </tr>
+
+      </tbody>
+  </table>
+  </div>
+
+
+</div>

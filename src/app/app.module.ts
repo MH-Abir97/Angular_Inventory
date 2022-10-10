@@ -20,6 +20,7 @@ import { SpinnerComponent } from './shared/spinner.component'
 
 import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr';
 import { CommonTableComponent } from './Inventory/common-table/common-table.component';
+import { RequestionReportyComponent } from './Reports/requestion-reporty/requestion-reporty.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { CommonTableComponent } from './Inventory/common-table/common-table.comp
     AppHeaderComponent,
     SpinnerComponent,
     AppSidebarComponent,
+    RequestionReportyComponent,
 
 
   ],

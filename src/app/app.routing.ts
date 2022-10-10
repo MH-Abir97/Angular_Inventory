@@ -3,11 +3,16 @@ import { AuthGuard } from './AuthGurd/auth.gurd';
 import { CommonTableComponent } from './Inventory/common-table/common-table.component';
 import { FullComponent } from './layouts/full/full.component';
 import { LoginComponent } from './Login/login/login.component';
+import { RequestionReportyComponent } from './Reports/requestion-reporty/requestion-reporty.component';
 
 export const AppRoutes: Routes = [
   {
     path: '',
     component:LoginComponent
+  },
+  {
+    path: 'requestionReport',
+    component:RequestionReportyComponent
   },
   {
 
