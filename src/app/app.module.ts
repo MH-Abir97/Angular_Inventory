@@ -21,7 +21,8 @@ import { SpinnerComponent } from './shared/spinner.component'
 import { ToastNoAnimationModule, ToastrModule } from 'ngx-toastr';
 import { CommonTableComponent } from './Inventory/common-table/common-table.component';
 import { RequestionReportyComponent } from './Reports/requestion-reporty/requestion-reporty.component';
-
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { MAT_SELECTSEARCH_DEFAULT_OPTIONS, MatSelectSearchOptions } from 'ngx-mat-select-search';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { RequestionReportyComponent } from './Reports/requestion-reporty/request
     SpinnerComponent,
     AppSidebarComponent,
     RequestionReportyComponent,
+   
 
 
   ],
@@ -49,13 +51,16 @@ import { RequestionReportyComponent } from './Reports/requestion-reporty/request
       positionClass: 'toast-bottom-right',
       // preventDuplicates: true,
     }),
+    NgxMatSelectSearchModule
     // ToastNoAnimationModule.forRoot()
   ],
   providers: [
     {
       provide: LocationStrategy,
-      useClass: PathLocationStrategy
-    }
+      useClass: PathLocationStrategy,
+     
+    },
+    
   ],
   bootstrap: [AppComponent],
 

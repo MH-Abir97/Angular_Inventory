@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './AuthGurd/auth.gurd';
 import { CommonTableComponent } from './Inventory/common-table/common-table.component';
+import { RequestionEntryComponent } from './Inventory/requestion-entry/requestion-entry.component';
 import { FullComponent } from './layouts/full/full.component';
 import { LoginComponent } from './Login/login/login.component';
 import { RequestionReportyComponent } from './Reports/requestion-reporty/requestion-reporty.component';
@@ -14,6 +15,10 @@ export const AppRoutes: Routes = [
     path: 'requestionReport',
     component:RequestionReportyComponent
   },
+  // {
+  //   path: 'requestionEntry',
+  //  component:RequestionEntryComponent
+  // },
   {
 
 
@@ -40,6 +45,10 @@ export const AppRoutes: Routes = [
       {
         path: 'salesOrder',
         loadChildren: () => import('./Inventory/sales-order/salesOrder.module').then(m => m.SalesOrderModule)
+      },
+      {
+        path: 'requestionEntry',
+        loadChildren: () => import('./Inventory/requestion-entry/requestion-entry.module').then(m => m.RequestionModule)
       },
       {
         path: '',

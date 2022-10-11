@@ -1,0 +1,57 @@
+
+<div fxLayout="row">
+    <div fxFlex.gt-sm="100%" >
+        <mat-card>
+            <mat-card-content>
+              <mat-card-title>
+                </mat-card-title>
+                <mat-icon> list_alt</mat-icon>
+                <p style="margin-top: -30px; margin-left: 25px;font-size: 18px;font-weight: bold;">Requestion</p>
+  
+                <hr>
+                <div class="row">
+                     <div class="col-md-3">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Requestion No</mat-label>
+                            <input matInput placeholder="Requestion no" >
+                          </mat-form-field>
+                     </div>
+                     <div class="col-md-3">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Employee</mat-label>
+                            <input matInput placeholder="Ex. Pizza" value="Sushi">
+                          </mat-form-field>
+                    </div>
+                    <div class="col-md-3">
+                        <mat-form-field class="example-full-width" appearance="fill">
+                            <mat-label>Favorite food</mat-label>
+                            <input matInput placeholder="Ex. Pizza" value="Sushi">
+                          </mat-form-field>
+                    </div>
+                    <div class="col-md-3">
+                        
+                      <mat-form-field class = "tp-full-width">
+                        <input type = "text" 
+                           placeholder = "US State" 
+                           aria-label = "Number" 
+                           matInput 
+                           [formControl] = "myControl" 
+                           [matAutocomplete] = "auto">
+                        <mat-autocomplete #auto = "matAutocomplete">
+                           <mat-option *ngFor = "let state of states" [value] = "state.value">
+                              {{state.display}}
+                           </mat-option>
+                        </mat-autocomplete>
+                     </mat-form-field>
+                    </div>
+                </div>
+  
+                
+            </mat-card-content>
+  
+        </mat-card>
+    </div>
+  </div>
+<app-common-table>
+</app-common-table>
+

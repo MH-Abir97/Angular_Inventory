@@ -19,7 +19,7 @@ import { CommonTableComponent } from "../common-table/common-table.component";
       RouterModule.forChild(SalesOrderRoutes)
     ],
     schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-    declarations: [SalesOrderComponent,CommonTableComponent],
+    declarations: [SalesOrderComponent],
 
   })
   export class SalesOrderModule {}
