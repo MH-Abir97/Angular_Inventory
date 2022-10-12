@@ -10,11 +10,13 @@ export class AuthGuard implements CanActivate {
     constructor(private router: Router) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    //   if (localStorage.getItem('currentUser')) {
-    //       return true;
-    //   }
 
-     // this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});
+    //  if (localStorage.getItem('currentUser')) {
+    //   return true;
+    //  }
+
+    //  this.router.navigate(['/dashboard'], { queryParams: { returnUrl: state.url }});
+    //  return false;
       
       this.router.navigate(['/login']);
       return true;

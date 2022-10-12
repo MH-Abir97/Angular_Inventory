@@ -24,7 +24,7 @@ export const AppRoutes: Routes = [
 
     path: '',
     component: FullComponent,
-
+    
     children: [
       {
         path: '',

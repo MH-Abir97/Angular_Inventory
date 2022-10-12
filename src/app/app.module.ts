@@ -23,6 +23,7 @@ import { CommonTableComponent } from './Inventory/common-table/common-table.comp
 import { RequestionReportyComponent } from './Reports/requestion-reporty/requestion-reporty.component';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { MAT_SELECTSEARCH_DEFAULT_OPTIONS, MatSelectSearchOptions } from 'ngx-mat-select-search';
+import { AuthGuard } from './AuthGurd/auth.gurd';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,10 +55,11 @@ import { MAT_SELECTSEARCH_DEFAULT_OPTIONS, MatSelectSearchOptions } from 'ngx-ma
     NgxMatSelectSearchModule
     // ToastNoAnimationModule.forRoot()
   ],
-  providers: [
+  providers: [AuthGuard,
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy,
+    
      
     },
     

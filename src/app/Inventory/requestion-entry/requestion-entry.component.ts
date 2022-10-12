@@ -10,34 +10,37 @@ export interface User {
   styleUrls: ['./requestion-entry.component.css']
 })
 export class RequestionEntryComponent implements OnInit {
-  myControl = new FormControl();
-  states:any;
-  filteredOptions:any=Observable<User[]>;;
+
   RequestionEntry:FormGroup;
+
+ // myControl = new FormControl('');
+  options= [
+    {Id:1,Name:"One"},
+    {Id:2,Name:"Two"},
+    {Id:3,Name:"Three"},
+  ];
+
+  filteredOptions:any= Observable<any[]>;
+
   constructor(private _fb:FormBuilder) {
    this.RequestionEntry=_fb.group({
     EmployeeId:'0',
+    myControl:'',
    })
    }
 
   ngOnInit(): void {
-    this.loadStates();
-    
+    this.filteredOptions = this.RequestionEntry.controls['myControl'].valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value || '')),
+    );
+   
   }
 
-  loadStates() {
-    var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
-       Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
-       Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
-       Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
-       North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
-       South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
-       Wisconsin, Wyoming';
-    this.states =  allStates.split(/, +/g).map( function (state) {
-       return {
-          value: state.toUpperCase(),
-          display: state
-       };
-    });
- }
+ private _filter(value: string) {
+    const filterValue = value.toLowerCase();
+    return this.options.filter(option => option.Name.toLowerCase().includes(filterValue));
+  }
+ 
+ 
 }
