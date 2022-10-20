@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-header',
@@ -11,11 +12,31 @@ export class AppHeaderComponent {
  /**
   *
   */
- constructor(private router:Router) {
+ constructor(private router:Router,private jwtHelper:JwtHelperService) {
   
 
  }
-  SignOut(){
-     this.router.navigate(["/"]);
+  // SignOut(){
+  //   debugger;
+  //    //this.router.navigate(["/"]);
+  //    localStorage.removeItem("jwt");
+  // }
+
+  public logOut = () => {
+    
+    this.router.navigate(["/"]);
+    localStorage.removeItem("jwt");
   }
+
+  isUserAuthenticated() {
+    const token = localStorage.getItem("jwt");
+    if (token && !this.jwtHelper.isTokenExpired(token)) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+ 
 }

@@ -40,15 +40,58 @@
                              formControlName="myControl"
                              [matAutocomplete]="auto">
                       <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.Name" (onSelectionChange)="onSelFunc(ddlItemList=option)">
                           {{option.Name}}
                         </mat-option>
                       </mat-autocomplete>
                     </mat-form-field>
                    </div>
                </div>
-                </form>
-              
+               
+              </form>
+                <div class="row">
+                    <!-- <div class="col-md-3">
+                      <mat-form-field class="example-full-width" appearance="fill">
+                        <mat-label>Employee</mat-label>
+                        <input type="text"
+                               placeholder="Item name"
+                               aria-label="Item name"
+                               matInput
+                               [(ngModel)]="ddlItem"
+                               [matAutocomplete]="auto" >
+                         <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                          <mat-option *ngFor="let option of filteredOptions | async" [value]="option.Name" (onSelectionChange)="onSelFunc(option)">
+                            {{option.Name}}
+                          </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field>
+                    </div> -->
+                    <div class="col-md-3">
+                      <mat-form-field class="example-full-width" appearance="fill">
+                       
+                        <input  [(ngModel)]="ItemDetails.UnitName" matInput placeholder="Unit" value="Sushi">
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-3">
+                      <mat-form-field class="example-full-width" appearance="fill">
+                       
+                        <input  [(ngModel)]="ItemDetails.UnitName" matInput placeholder="Unit" value="Sushi">
+                      </mat-form-field>
+                    </div>
+
+                    <div class="col-md-1">
+                     
+                        <button mat-raised-button (click)="OnAdd()" color="warn" style="margin: 5px; width: 15px;height: 40px;" >
+                         Add
+                       </button >
+   
+                    </div> 
+                </div>
+            
+                <div *ngFor="let ItemDetails of  ItemDetailList;">
+                  <span>{{ItemDetails.Name}}   {{ItemDetails.UnitName}}  </span>
+                </div>
+
   
                 
             </mat-card-content>

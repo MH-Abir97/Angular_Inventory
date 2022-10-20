@@ -24,6 +24,12 @@ import { RequestionReportyComponent } from './Reports/requestion-reporty/request
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { MAT_SELECTSEARCH_DEFAULT_OPTIONS, MatSelectSearchOptions } from 'ngx-mat-select-search';
 import { AuthGuard } from './AuthGurd/auth.gurd';
+import { JwtModule } from '@auth0/angular-jwt';
+
+export function tokenGetter() {
+  return localStorage.getItem("jwt");
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +58,15 @@ import { AuthGuard } from './AuthGurd/auth.gurd';
       positionClass: 'toast-bottom-right',
       // preventDuplicates: true,
     }),
-    NgxMatSelectSearchModule
+    NgxMatSelectSearchModule,
+
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["localhost:44384"],
+        disallowedRoutes: []
+      }
+  }),
     // ToastNoAnimationModule.forRoot()
   ],
   providers: [AuthGuard,

@@ -50,7 +50,7 @@
                       <mat-icon style="font-size:25px;">remove</mat-icon>
                     </button >
 
-                    <button (click)="printbtn()" mat-raised-button color="" style="width:15px;"
+                    <button *ngIf="isUserAuthenticated" (click)="printbtn()" mat-raised-button color="" style="width:15px;"
                      matTooltipPosition="above"
                      matTooltip="Report"
 

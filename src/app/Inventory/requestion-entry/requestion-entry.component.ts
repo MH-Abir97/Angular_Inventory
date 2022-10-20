@@ -13,6 +13,11 @@ export class RequestionEntryComponent implements OnInit {
 
   RequestionEntry:FormGroup;
 
+  ItemDetails:any={};
+  ItemDetailList:any=[];
+  ddlItem=null;
+  ddlItemList:any={};
+
  // myControl = new FormControl('');
   options= [
     {Id:1,Name:"One"},
@@ -34,6 +39,7 @@ export class RequestionEntryComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value || '')),
     );
+    this.ddlItemList=null;
    
   }
 
@@ -42,5 +48,19 @@ export class RequestionEntryComponent implements OnInit {
     return this.options.filter(option => option.Name.toLowerCase().includes(filterValue));
   }
  
- 
+  OnAdd(){
+    debugger;
+   // this.ItemDetails.Id=this.ddlItem.Id;
+   // this.ItemDetails.Name=this.ddlItem.Name;
+    this.ItemDetailList.push(this.ItemDetails);
+    this.RequestionEntry.value.myControl;
+    this.ItemDetails={};
+    this.ddlItem=null;
+  }
+
+  onSelFunc(option:any){
+    this.ddlItem=option;
+  
+    console.log('Data',this.ddlItemList)
+  }
 }

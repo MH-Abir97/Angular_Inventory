@@ -14,6 +14,7 @@ export const AppRoutes: Routes = [
   {
     path: 'requestionReport',
     component:RequestionReportyComponent
+    ,canActivate: [AuthGuard]
   },
   // {
   //   path: 'requestionEntry',

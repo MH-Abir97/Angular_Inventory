@@ -19,6 +19,7 @@
 
 </div>
 <mat-nav-list appAccordion class="user-profile1">
+    
     <mat-list-item appAccordionLink *ngFor="let menuitem of menuItems.getMenuitem()" routerLinkActive="selected" group="{{menuitem.state}}">
         <a class="" appAccordionToggle [routerLink]="['/', menuitem.state]" *ngIf="menuitem.type === 'link'">
             <mat-icon>{{ menuitem.icon }}</mat-icon>
@@ -29,5 +30,5 @@
 
 
     </mat-list-item>
-
+   
 </mat-nav-list>

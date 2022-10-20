@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { ToastrService } from 'ngx-toastr';
+import { AuthenticationService } from 'src/app/authentication.service';
 
 export interface PeriodicElement {
   name: string;
@@ -30,16 +33,38 @@ export class CommonTableComponent implements OnInit {
   displayedColumns: string[] = ['SL', 'ItemName', 'RequestionQty', 'Remarks','Action'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor( private jwtHelper : JwtHelperService,
+    private _AuthService:AuthenticationService,
+    private toastr: ToastrService,
+    ) { }
 
   ngOnInit(): void {
 
   }
 
   printbtn() {
-    window.open("http://localhost:4200/requestionReport", "popup", "width=850,height=550,left=280,top=80");
+    debugger;
+ 
+
+    this._AuthService.GetReportData().subscribe((res)=>{
+      window.open("http://localhost:4200/requestionReport", "popup", "width=850,height=550,left=280,top=80");
+    },
+    err => {
+      this.toastr.error("dont have permision!!!");
+    })
+    
+   
   }
 
+  isUserAuthenticated() {
+    const token = localStorage.getItem("jwt");
+    if (token && !this.jwtHelper.isTokenExpired(token)) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 
 
 }
