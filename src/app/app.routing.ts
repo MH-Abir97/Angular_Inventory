@@ -5,6 +5,7 @@ import { RequestionEntryComponent } from './Inventory/requestion-entry/requestio
 import { FullComponent } from './layouts/full/full.component';
 import { LoginComponent } from './Login/login/login.component';
 import { RequestionReportyComponent } from './Reports/requestion-reporty/requestion-reporty.component';
+import { UserEntryComponent } from './User/user-entry/user-entry.component';
 
 export const AppRoutes: Routes = [
   {
@@ -16,6 +17,7 @@ export const AppRoutes: Routes = [
     component:RequestionReportyComponent
     ,canActivate: [AuthGuard]
   },
+
   // {
   //   path: 'requestionEntry',
   //  component:RequestionEntryComponent
@@ -50,6 +52,10 @@ export const AppRoutes: Routes = [
       {
         path: 'requestionEntry',
         loadChildren: () => import('./Inventory/requestion-entry/requestion-entry.module').then(m => m.RequestionModule)
+      },
+      {
+        path: 'userEntry',
+        loadChildren: () => import('./User/user-entry/user-entry.module').then(m => m.UserEntryModule)
       },
       {
         path: '',

@@ -1,0 +1,75 @@
+
+<div fxLayout="row">
+    <div fxFlex.gt-sm="100%" >
+        <mat-card>
+            <mat-card-content>
+              <mat-card-title>
+                </mat-card-title>
+                <mat-icon> supervised_user_circle</mat-icon>
+                <p style="margin-top: -30px; margin-left: 25px;font-size: 18px;font-weight: bold;">User Entry</p>
+  
+                <hr>
+                <form [formGroup]="UserEntry">
+                  <div class="row">
+                    <div class="col-md-3">
+                       <mat-form-field class="example-full-width" appearance="outline">
+                           <mat-label>User Name</mat-label>
+                           <input matInput placeholder="User Name"   formControlName="UserName">
+                         </mat-form-field>
+                    </div>
+                    <div class="col-md-3">
+                       <mat-form-field class="example-full-width" appearance="outline">
+                        <mat-label ><mat-icon (click)="PasswordHideAndShow()" style="font-weight:22px;">remove_red_eye</mat-icon><i></i></mat-label>
+                           <input type="text" matInput placeholder="Password"  formControlName="Password" >
+                         </mat-form-field>
+                   </div>
+                   <div class="col-md-3">
+                    <mat-form-field class="example-full-width" appearance="outline">
+                     <mat-label ><mat-icon  style="font-weight:22px;">alternate_email</mat-icon><i></i></mat-label>
+                        <input type="text" matInput placeholder="Email"  formControlName="Email" >
+                      </mat-form-field>
+                </div>
+                   
+                   <div class="col-md-3">
+                       
+                    <mat-form-field class="example-full-width" appearance="outline">
+                      <mat-label>Role Name</mat-label>
+                      <input type="text"
+                             placeholder="Role name"
+                             aria-label="Role"
+                             matInput
+                             formControlName="myControl"
+                             [matAutocomplete]="auto">
+                      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                        <mat-option *ngFor="let option of filteredOptions | async" [value]="option.RoleName">
+                          {{option.RoleName}}
+                        </mat-option>
+                      </mat-autocomplete>
+                    </mat-form-field>
+                   </div>
+                   
+               </div>
+               <div class="row">
+                <div class="col-md-10">
+
+                </div>
+
+                <div class="col-md-2">
+                    
+                    <button (click)="SaveUser()" class="btn btn-primary" style="padding:10px;width: 100%;">
+                     <i class="fa fa-save"></i> Save
+                   </button >
+                   </div>
+               </div>
+               
+              </form>
+              
+            
+               
+  
+                
+            </mat-card-content>
+  
+        </mat-card>
+    </div>
+  </div>

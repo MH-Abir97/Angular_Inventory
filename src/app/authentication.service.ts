@@ -33,5 +33,16 @@ export class AuthenticationService {
     
   }
 
+ 
+  SaveUser(params: any): Observable<any> {
+    const body = JSON.stringify(params);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this._httpClient.post(this.API_URL + '/Authentication/UserSave', body, httpOptions);
+  }
+
 
 }

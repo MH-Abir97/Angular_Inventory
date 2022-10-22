@@ -11,6 +11,8 @@ const MENUITEMS = [
   { state: 'dashboard', name: 'Dashboard', type: 'link', icon: 'av_timer' },
   { state: 'salesOrder', name: 'SalesOrder', type: 'link', icon: 'redeem' },
   { state: 'requestionEntry', name: 'Requestion Entry', type: 'link', icon: 'redeem' },
+  { state: 'userEntry', name: 'User Entry', type: 'link', icon: 'redeem' },
+  
   // { state: 'login', name: 'login', type: 'link', icon: 'redeem' },requestion
   
   { state: 'button', type: 'link', name: 'Buttons', icon: 'crop_7_5' },

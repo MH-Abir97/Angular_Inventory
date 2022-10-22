@@ -25,6 +25,7 @@ import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { MAT_SELECTSEARCH_DEFAULT_OPTIONS, MatSelectSearchOptions } from 'ngx-mat-select-search';
 import { AuthGuard } from './AuthGurd/auth.gurd';
 import { JwtModule } from '@auth0/angular-jwt';
+import { UserEntryComponent } from './User/user-entry/user-entry.component';
 
 export function tokenGetter() {
   return localStorage.getItem("jwt");
@@ -38,6 +39,7 @@ export function tokenGetter() {
     SpinnerComponent,
     AppSidebarComponent,
     RequestionReportyComponent,
+    UserEntryComponent,
    
 
 
