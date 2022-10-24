@@ -40,11 +40,11 @@ export class SalesOverviewComponent implements OnInit {
     this.chartOptions = {
       series: [
         {
-          name: "Pixel",
+          name: "Marine Sprite",
           data: [44, 55, 57, 56, 61, 58],
         },
         {
-          name: "Ample",
+          name: "Marine Sprite",
           data: [76, 85, 101, 98, 87, 105],
         },
       ],

@@ -10,6 +10,24 @@
   </app-common-table> -->
 <!-- </router-outlet> -->
 
+<mat-card>
+  <mat-card-content>
+    <div id="chart">
+      <apx-chart
+        [series]="chartOptions.series"
+        [chart]="chartOptions.chart"
+        [xaxis]="chartOptions.xaxis"
+        [dataLabels]="chartOptions.dataLabels"
+        [grid]="chartOptions.grid"
+        [stroke]="chartOptions.stroke"
+        [title]="chartOptions.title"
+        [markers]="chartOptions.markers"
+        [yaxis]="chartOptions.yaxis"
+        [fill]="chartOptions.fill"
+      ></apx-chart>
+    </div>
+  </mat-card-content>
+</mat-card>
 
 
 

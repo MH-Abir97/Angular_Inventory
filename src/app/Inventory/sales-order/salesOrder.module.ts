@@ -12,10 +12,12 @@ import { SalesOrderComponent } from "./sales-order.component";
 import { SalesOrderRoutes } from "./salesOrder.routing";
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { CommonTableComponent } from "../common-table/common-table.component";
+import { NgApexchartsModule } from 'ng-apexcharts';
 @NgModule({
     imports: [
       CommonModule,
       DemoMaterialModule,
+      NgApexchartsModule,
       RouterModule.forChild(SalesOrderRoutes)
     ],
     schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
