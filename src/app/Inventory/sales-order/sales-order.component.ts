@@ -11,7 +11,12 @@ import {
   ApexGrid,
   ApexFill,
   ApexMarkers,
-  ApexYAxis
+  ApexYAxis,
+  ApexPlotOptions,
+
+  ApexLegend,
+
+  ApexTooltip
 } from "ng-apexcharts";
 
 export type ChartOptions = {
@@ -25,7 +30,13 @@ export type ChartOptions = {
   yaxis: ApexYAxis;
   stroke: ApexStroke;
   title: ApexTitleSubtitle;
+  legend: ApexLegend;
+  tooltip: ApexTooltip;
+  plotOptions: ApexPlotOptions;
 };
+
+
+
 
 @Component({
   selector: 'app-sales-order',
@@ -37,16 +48,17 @@ export class SalesOrderComponent implements OnInit {
 
   @ViewChild("chart") chart: ChartComponent = Object.create(null);
   public chartOptions: Partial<ChartOptions>;
-  constructor(private toastr: ToastrService) { 
+  public chartOptions1: Partial<ChartOptions>;
+  constructor(private toastr: ToastrService) {
 
     this.chartOptions = {
       series: [
         {
-          name: "Likes",
+          name: "PB",
           data: [4, 3, 6, 15, 29, 35, 20, 9, 14, 7]
         },
         {
-          name: "Likes",
+          name: "PR",
           data: [4, 6, 10, 5, 29, 1, 22, 9, 12, 7]
         }
       ],
@@ -71,7 +83,7 @@ export class SalesOrderComponent implements OnInit {
           "8/11/2000",
           "9/11/2000",
           "10/11/2000",
-         
+
         ]
       },
       title: {
@@ -94,6 +106,13 @@ export class SalesOrderComponent implements OnInit {
           stops: [0, 100, 100, 100]
         }
       },
+      tooltip: {
+        y: {
+          formatter: function(val) {
+            return "$ " + val + " thousands";
+          }
+        }
+      },
       markers: {
         size: 4,
         colors: ["#FFA41B","blue"],
@@ -104,15 +123,81 @@ export class SalesOrderComponent implements OnInit {
         }
       },
       yaxis: {
-        min: -10,
+        min:5,
         max: 50,
         title: {
           text: "Engagement"
         }
       }
     };
+
+
+    this.chartOptions1 = {
+      series: [
+        {
+          name: "Net Profit",
+          data: [44, 55, 57, 56, 61, 58, 63, 60, 66]
+        },
+        {
+          name: "Revenue",
+          data: [76, 85, 101, 98, 87, 105, 91, 114, 94]
+        },
+        {
+          name: "Free Cash Flow",
+          data: [35, 41, 36, 26, 45, 48, 52, 53, 41]
+        }
+      ],
+      chart: {
+        type: "bar",
+        height: 350
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: "55%",
+          
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        show: true,
+        width: 2,
+        colors: ["transparent"]
+      },
+      xaxis: {
+        categories: [
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct"
+        ]
+      },
+      yaxis: {
+        title: {
+          text: "$ (thousands)"
+        }
+      },
+      fill: {
+        opacity: 1
+      },
+      tooltip: {
+        y: {
+          formatter: function(val) {
+            return "$ " + val + " thousands";
+          }
+        }
+      }
+    };
+
   }
-  
+
 
   ngOnInit(): void {
   }
@@ -127,7 +212,7 @@ export class SalesOrderComponent implements OnInit {
 
      // window.open('http://localhost:4200/salesOrder');
 
-      
+
   }
 
 }

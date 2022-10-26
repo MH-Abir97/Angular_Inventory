@@ -21,8 +21,8 @@ export class LoginComponent implements OnInit {
     private toastr: ToastrService,
     private jwtHelper : JwtHelperService,
     private _AuthService:AuthenticationService
-    ){ 
-    
+    ){
+
    this.loginForm=_fb.group({
     UserName:'',
     Password:''
@@ -44,27 +44,27 @@ export class LoginComponent implements OnInit {
 
   LoginSave(){
      debugger;
-    
+
       var UserData:any={};
       UserData.UserName=this.loginForm.value.UserName;
       UserData.Password=this.loginForm.value.Password;
-      sessionStorage.setItem('userDetails', JSON.stringify(UserData)); 
+      sessionStorage.setItem('userDetails', JSON.stringify(UserData));
       this.userDataList= sessionStorage.getItem("userDetails");
       this.TempUserData=JSON.parse(this.userDataList)
-     
+
 
     //  if (this.TempUserData.UserName=="Admin" && this.TempUserData.Password=="1234"){
     //     this.router.navigate(['/dashboard']);
-      
+
     //     this.toastr.success("Login Successfully !!!");
     //   }else{
     //     this.toastr.error("Password error!!!");
-        
+
     //   }
-   
+
 
      debugger;
-
+     this.router.navigate(['/dashboard']);
       this._AuthService.UserSignIn(UserData).subscribe((res)=>{
         const token = (<any>res).token;
         localStorage.setItem("jwt", token);
@@ -75,8 +75,8 @@ export class LoginComponent implements OnInit {
         this.toastr.error("Password error!!!");
       })
 
-     
-   
+
+
   }
 
 
