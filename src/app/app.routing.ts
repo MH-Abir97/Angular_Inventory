@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './AuthGurd/auth.gurd';
+import { ChatUiComponent } from './Chat/chat-ui/chat-ui.component';
 import { CommonTableComponent } from './Inventory/common-table/common-table.component';
 import { RequestionEntryComponent } from './Inventory/requestion-entry/requestion-entry.component';
 import { FullComponent } from './layouts/full/full.component';
@@ -18,6 +19,7 @@ export const AppRoutes: Routes = [
     ,canActivate: [AuthGuard]
   },
 
+
   // {
   //   path: 'requestionEntry',
   //  component:RequestionEntryComponent
@@ -27,7 +29,7 @@ export const AppRoutes: Routes = [
 
     path: '',
     component: FullComponent,
-    
+
     children: [
       {
         path: '',
@@ -60,6 +62,10 @@ export const AppRoutes: Routes = [
       {
         path: '',
         loadChildren: () => import('./Login/login/login.module').then(m => m.LoginModule)
+      },
+      {
+        path: 'chat',
+        loadChildren: () => import('./Chat/chat-ui/chat.module').then(m => m.ChatModule)
       }
     ],
   }

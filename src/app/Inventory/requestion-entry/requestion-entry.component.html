@@ -6,8 +6,8 @@
               <mat-card-title>
                 </mat-card-title>
                 <mat-icon> list_alt</mat-icon>
-                <p style="margin-top: -30px; margin-left: 25px;font-size: 18px;font-weight: bold;">Requestion</p>
-  
+                <p style="margin-top: -30px; margin-left: 25px;font-size: 18px;font-weight: bold;">Requestion ({{count}})</p>
+
                 <hr>
                 <form [formGroup]="RequestionEntry">
                   <div class="row">
@@ -30,7 +30,7 @@
                          </mat-form-field>
                    </div>
                    <div class="col-md-3">
-                       
+
                     <mat-form-field class="example-full-width" appearance="fill">
                       <mat-label>Employee</mat-label>
                       <input type="text"
@@ -47,7 +47,7 @@
                     </mat-form-field>
                    </div>
                </div>
-               
+
               </form>
                 <div class="row">
                     <!-- <div class="col-md-3">
@@ -68,39 +68,39 @@
                     </div> -->
                     <div class="col-md-3">
                       <mat-form-field class="example-full-width" appearance="fill">
-                       
+
                         <input  [(ngModel)]="ItemDetails.UnitName" matInput placeholder="Unit" value="Sushi">
                       </mat-form-field>
                     </div>
                     <div class="col-md-3">
                       <mat-form-field class="example-full-width" appearance="fill">
-                       
+
                         <input  [(ngModel)]="ItemDetails.UnitName" matInput placeholder="Unit" value="Sushi">
                       </mat-form-field>
                     </div>
 
                     <div class="col-md-1">
-                     
+
                         <button mat-raised-button (click)="OnAdd()" color="warn" style="margin: 5px; width: 15px;height: 40px;" >
                          Add
                        </button >
-   
-                    </div> 
+
+                    </div>
                 </div>
-            
+
                 <div *ngFor="let ItemDetails of  ItemDetailList;">
                   <span>{{ItemDetails.Name}}   {{ItemDetails.UnitName}}  </span>
                 </div>
 
-  
-                
+
+
             </mat-card-content>
-  
+
         </mat-card>
     </div>
   </div>
 
- 
+
 
 <app-common-table>
 </app-common-table>

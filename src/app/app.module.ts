@@ -27,6 +27,7 @@ import { AuthGuard } from './AuthGurd/auth.gurd';
 import { JwtModule } from '@auth0/angular-jwt';
 import { UserEntryComponent } from './User/user-entry/user-entry.component';
 
+
 export function tokenGetter() {
   return localStorage.getItem("jwt");
 }
@@ -40,7 +41,8 @@ export function tokenGetter() {
     AppSidebarComponent,
     RequestionReportyComponent,
     UserEntryComponent,
-   
+
+
 
 
   ],
@@ -75,10 +77,10 @@ export function tokenGetter() {
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy,
-    
-     
+
+
     },
-    
+
   ],
   bootstrap: [AppComponent],
 

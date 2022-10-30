@@ -7,7 +7,7 @@
                 </mat-card-title>
                 <mat-icon> supervised_user_circle</mat-icon>
                 <p style="margin-top: -30px; margin-left: 25px;font-size: 18px;font-weight: bold;">User Entry</p>
-  
+
                 <hr>
                 <form [formGroup]="UserEntry">
                   <div class="row">
@@ -29,9 +29,9 @@
                         <input type="text" matInput placeholder="Email"  formControlName="Email" >
                       </mat-form-field>
                 </div>
-                   
+
                    <div class="col-md-3">
-                       
+
                     <mat-form-field class="example-full-width" appearance="outline">
                       <mat-label>Role Name</mat-label>
                       <input type="text"
@@ -47,7 +47,7 @@
                       </mat-autocomplete>
                     </mat-form-field>
                    </div>
-                   
+
                </div>
                <div class="row">
                 <div class="col-md-10">
@@ -55,21 +55,21 @@
                 </div>
 
                 <div class="col-md-2">
-                    
+
                     <button (click)="SaveUser()" class="btn btn-primary" style="padding:10px;width: 100%;">
                      <i class="fa fa-save"></i> Save
                    </button >
                    </div>
                </div>
-               
+
               </form>
-              
-            
-               
-  
-                
+
+
+
+
+
             </mat-card-content>
-  
+
         </mat-card>
     </div>
   </div>
