@@ -50,8 +50,8 @@ export class RequestionEntryComponent implements OnInit {
   }
   addToInbox(obj: MessageDto) {
     let newObj = new MessageDto();
-    newObj.user = obj.user;
-    newObj.msgText = obj.msgText;
+    newObj.UserName = obj.Message;
+    newObj.Message = obj.Message;
     this.listofNotification.push(newObj);
     this.count= this.listofNotification.length;
 

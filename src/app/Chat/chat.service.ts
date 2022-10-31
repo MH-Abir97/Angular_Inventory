@@ -10,10 +10,10 @@ import { MessageDto } from './chat-ui/chat';
 export class ChatService {
 
 
-  private  connection: any = new signalR.HubConnectionBuilder().withUrl("https://localhost:44324/chatsocket")   // mapping to the chathub as in startup.cs
+  private  connection: any = new signalR.HubConnectionBuilder().withUrl("https://localhost:44384/chatsocket")   // mapping to the chathub as in startup.cs
   .configureLogging(signalR.LogLevel.Information)
   .build();
-readonly POST_URL = "https://localhost:44324/api/chat/send"
+readonly POST_URL = "https://localhost:44384/api/token/send"
 
 private receivedMessageObject: MessageDto = new MessageDto();
 private sharedObj = new Subject<MessageDto>();
@@ -40,8 +40,8 @@ setTimeout(() => this.start(), 5000);
 }
 
 private mapReceivedMessage(user: string, message: string): void {
-this.receivedMessageObject.user = user;
-this.receivedMessageObject.msgText = message;
+this.receivedMessageObject.UserName = user;
+this.receivedMessageObject.Message = message;
 this.sharedObj.next(this.receivedMessageObject);
 }
 

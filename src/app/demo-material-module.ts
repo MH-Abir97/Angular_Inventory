@@ -49,7 +49,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { PlatformModule } from '@angular/cdk/platform';
 import { ObserversModule } from '@angular/cdk/observers';
 import { PortalModule } from '@angular/cdk/portal';
-
+import {ScrollingModule} from '@angular/cdk/scrolling';
 /**
  * NgModule that includes all Material modules that are required to serve the demo-app.
  */
@@ -96,7 +96,9 @@ import { PortalModule } from '@angular/cdk/portal';
         ObserversModule,
         OverlayModule,
         PlatformModule,
-        PortalModule
+        PortalModule,
+        ScrollingModule
+       
     ]
 })
 export class DemoMaterialModule { }

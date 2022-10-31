@@ -7,11 +7,15 @@
             <mat-card-title>
               </mat-card-title>
               <mat-icon> supervised_user_circle</mat-icon>
-              <p style="margin-top: -30px; margin-left: 25px;font-size: 18px;font-weight: bold;">User Entry</p>
-               <div class="row">
-                <ul style="background-color:gray;height: 200px;">
-                  <li *ngFor="let mObj of msgInboxArray">{{mObj.user}} :<br /><span class="msg-italic-style">{{mObj.msgText}}</span></li>
-                </ul>
+              <p style="margin-top: -30px; margin-left: 25px;font-size: 18px;font-weight: bold;">Chat</p>
+               <div class="row" style="background-color:#8080802e;height: 200px;width: 100%;border: 2px solid #1e88e5;">
+                <!-- <ul >
+                  <li >{{mObj.UserName}} :<br /><span class="msg-italic-style"></span></li>
+                </ul> -->
+                <div *ngFor="let mObj of msgInboxArray">
+                  <span>{{mObj.Message}}</span> 
+                  <span matBadge="{{mObj.UserName}}" matBadgeOverlap="false" class="demo-section"></span>
+                </div>
                </div>
               <hr>
               <form [formGroup]="ChatEntry" >
@@ -19,18 +23,18 @@
                   <div class="col-md-3">
                      <mat-form-field class="example-full-width" appearance="outline"   >
                          <mat-label>Msg</mat-label>
-                         <input matInput placeholder="User Name" formControlName="msgText" >
+                         <input matInput placeholder="User Name" formControlName="Message" >
                        </mat-form-field>
                   </div>
                   <div class="col-md-3">
                     <mat-form-field class="example-full-width" appearance="outline"  >
                         <mat-label>User</mat-label>
-                        <input matInput placeholder="User Name"  formControlName="user"  >
+                        <input matInput placeholder="User Name"  formControlName="UserName"  >
                       </mat-form-field>
                  </div>
                  <div class="col-md-3">
                   <button mat-raised-button (click)="send()" color="warn" style="margin: 5px; width: 50px;height: 60px;" >
-                    Add
+                    <mat-icon>send</mat-icon>
                   </button >
                </div>
 

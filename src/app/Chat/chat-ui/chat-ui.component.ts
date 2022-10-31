@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ChatService } from '../chat.service';
 import { MessageDto } from './chat';
@@ -6,15 +6,19 @@ import { MessageDto } from './chat';
 @Component({
   selector: 'app-chat-ui',
   templateUrl: './chat-ui.component.html',
-  styleUrls: ['./chat-ui.component.css']
+  styleUrls: ['./chat-ui.component.css'],
+
 })
 export class ChatUiComponent implements OnInit {
+
+  
+
    ChatEntry:FormGroup;
   constructor(private chatService:ChatService,private _fb:FormBuilder) {
 
     this.ChatEntry=_fb.group({
-      msgText:'',
-      user:'',
+      Message:'',
+      UserName:'',
 
      })
 
@@ -30,10 +34,10 @@ export class ChatUiComponent implements OnInit {
 
   send(): void {
     debugger;
-    this.msgDto.msgText= this.ChatEntry.value.msgText;
-    this.msgDto.user= this.ChatEntry.value.user;
+    this.msgDto.Message= this.ChatEntry.value.Message;
+    this.msgDto.UserName= this.ChatEntry.value.UserName;
     if(this.msgDto) {
-      if(this.msgDto.user.length == 0 || this.msgDto.user.length == 0){
+      if(this.msgDto.UserName.length == 0 || this.msgDto.Message.length == 0){
         window.alert("Both fields are required.");
         return;
       } else {
@@ -44,8 +48,8 @@ export class ChatUiComponent implements OnInit {
 
   addToInbox(obj: MessageDto) {
     let newObj = new MessageDto();
-    newObj.user = obj.user;
-    newObj.msgText = obj.msgText;
+    newObj.UserName = obj.UserName;
+    newObj.Message = obj.Message;
     this.msgInboxArray.push(newObj);
 
   }

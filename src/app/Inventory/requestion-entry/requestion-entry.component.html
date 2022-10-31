@@ -4,10 +4,16 @@
         <mat-card>
             <mat-card-content>
               <mat-card-title>
+                <span matBadge="{{count}}" matBadgeOverlap="false" class="demo-section"></span>
                 </mat-card-title>
                 <mat-icon> list_alt</mat-icon>
-                <p style="margin-top: -30px; margin-left: 25px;font-size: 18px;font-weight: bold;">Requestion ({{count}})</p>
+                <p style="margin-top: -30px; margin-left: 25px;font-size: 18px;font-weight: bold;">Requestion 
+                  
+                
 
+                </p>
+              
+               
                 <hr>
                 <form [formGroup]="RequestionEntry">
                   <div class="row">
